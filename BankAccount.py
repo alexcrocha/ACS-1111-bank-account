@@ -29,20 +29,36 @@ class BankAccount:
             "*" * (len(str(self.account_number)) - 4) + str(self.account_number)[-4:]
         )
         print(
-            f"{self.full_name}\nAccount No.: {censored_account_number}\nBalance: ${self.balance:.2f}"
+            f"\n{self.full_name}\nAccount No.: {censored_account_number}\nBalance: ${self.balance:.2f}\n"
         )
 
+huey = BankAccount("Hubert Duck", 1029384756)
+dewey = BankAccount("Dewford Dingus Duck", 1874609235)
+louie = BankAccount("Llewellyn Duck", 1627384509)
 
-alex_account = BankAccount("Alex Rocha", 43536373)
+huey.deposit(400000)
+huey.print_statement()
+huey.add_interest()
+huey.print_statement()
+huey.withdraw(150)
+huey.print_statement()
 
-alex_account.deposit(1000)
-alex_account.deposit(500)
+print('===========\n')
 
-alex_account.withdraw(1400)
-alex_account.withdraw(200)
+dewey.deposit(400)
+dewey.print_statement()
+dewey.add_interest()
+dewey.print_statement()
+dewey.withdraw(350)
+dewey.print_statement()
+dewey.withdraw(150)
+dewey.print_statement()
 
-alex_account.get_balance()
-alex_account.add_interest()
-alex_account.get_balance()
+print('===========\n')
 
-alex_account.print_statement()
+louie.deposit(1000)
+louie.print_statement()
+louie.add_interest()
+louie.get_balance()
+louie.withdraw(50.83)
+louie.print_statement()
