@@ -6,7 +6,7 @@ class BankAccount:
 
     def deposit(self, amount):
         self.balance += amount
-        print(f"Amount deposited: ${amount} new balance: ${self.balance}")
+        print(f"Amount deposited: ${amount:.2f} new balance: ${self.balance:.2f}")
 
     def withdraw(self, amount):
         if self.balance - amount < 0:
@@ -14,15 +14,23 @@ class BankAccount:
             self.balance -= 10
         else:
             self.balance -= amount
-            print(f"Amount withdrawn: ${amount} new balance: ${self.balance}")
+            print(f"Amount withdrawn: ${amount:.2f} new balance: ${self.balance:.2f}")
 
     def get_balance(self):
-        print(f"Your balance is ${self.balance}.")
+        print(f"Your balance is ${self.balance:.2f}.")
         return self.balance
 
     def add_interest(self):
         interest = self.balance * 0.00083
         self.balance += interest
+
+    def print_statement(self):
+        censored_account_number = (
+            "*" * (len(str(self.account_number)) - 4) + str(self.account_number)[-4:]
+        )
+        print(
+            f"{self.full_name}\nAccount No.: {censored_account_number}\nBalance: ${self.balance:.2f}"
+        )
 
 
 alex_account = BankAccount("Alex Rocha", 43536373)
@@ -36,3 +44,5 @@ alex_account.withdraw(200)
 alex_account.get_balance()
 alex_account.add_interest()
 alex_account.get_balance()
+
+alex_account.print_statement()
