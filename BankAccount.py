@@ -20,6 +20,10 @@ class BankAccount:
         print(f"Your balance is ${self.balance}.")
         return self.balance
 
+    def add_interest(self):
+        interest = self.balance * 0.00083
+        self.balance += interest
+
 
 alex_account = BankAccount("Alex Rocha", 43536373)
 
@@ -29,4 +33,6 @@ alex_account.deposit(500)
 alex_account.withdraw(1400)
 alex_account.withdraw(200)
 
+alex_account.get_balance()
+alex_account.add_interest()
 alex_account.get_balance()
