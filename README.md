@@ -13,4 +13,4 @@ Users are able to:
 And their bank accounts are able to accrue interest.
 
 ## Programming Language
-This software was written in Python 3.9.6
+This software was written in Python 3
